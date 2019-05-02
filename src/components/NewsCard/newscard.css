@@ -1,0 +1,44 @@
+.newscard {
+  border: 3px solid rgba(179, 173, 173, 0.493);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 123px;
+  justify-content: space-between;
+  position: relative;
+  bottom: 264.5px;
+  width: 944.8px;
+  height: 220px;
+}
+img {
+  width: 151.1px;
+  height: 151.1px;
+}
+.headline {
+  text-align: justify;
+  position: relative;
+  bottom: 4.3cm;
+  right: 6.8cm;
+  font-weight: bold;
+  color: rgb(8, 100, 153);
+  font-style: italic;
+  background: white;
+  border-bottom: 2px solid #be2819;
+  padding: 7px 0 6px;
+  margin-bottom: 60px;
+}
+.details {
+  text-align: justify;
+  position: relative;
+  top: 15px;
+  right: 0.5cm;
+  width: 755.9px;
+}
+.author {
+  font-style: italic;
+  position: relative;
+  bottom: 10px;
+  left: 18cm;
+  color: rgb(46, 142, 231);
+  cursor: pointer;
+}

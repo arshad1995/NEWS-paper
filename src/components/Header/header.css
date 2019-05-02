@@ -1,0 +1,11 @@
+.news {
+  display: flex;
+  justify-content: center;
+  background-color: #130f40;
+}
+
+.news > p {
+  font-size: 30px;
+  font-weight: bold;
+  color: #fff;
+}

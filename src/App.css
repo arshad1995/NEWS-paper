@@ -1,0 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.centerButton {
+  display: flex;
+  justify-content: center;
+  background-color: #ececec;
+}
