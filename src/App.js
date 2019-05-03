@@ -27,8 +27,40 @@ let channels = [
     id: 5
   }
 ];
+// let iteams = [
+//   {
+//     src: "https://i-invdn-com.akamaized.net/trkd-images/LYNXNPEF41017_L.jpg",
+//     headline:
+//       "Junk food could be banned for Texas food stamp recipients - KTRK-TV",
+//     description:
+//       "By Swati Pandey SYDNEY (Reuters) - Asian markets marked time  on Thursday with two major centers - Japan and China - shut for holidays while the dollar held on to overnight gains after the",
+//     Author: "Reuters"
+//   },
+//   {
+//     src: "https://i-invdn-com.akamaized.net/trkd-images/LYNXNPEF41017_L.jpg",
+//     headline:
+//       "Junk food could be banned for Texas food stamp recipients - KTRK-TV",
+//     description:
+//       "By Swati Pandey SYDNEY (Reuters) - Asian markets marked time  on Thursday with two major centers - Japan and China - shut for holidays while the dollar held on to overnight gains after the",
+//     Author: "Reuters"
+//   }
+// ];
 
 class App extends Component {
+  state = {
+    articles: []
+  };
+
+  componentDidMount() {
+    fetch(
+      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=539240fb4d8d48bc9657e4c6fadfb939 "
+    )
+      .then(data => data.json())
+
+      .then(data => this.setState({ articles: data.articles }))
+      .catch(e => e);
+  }
+
   render() {
     return (
       <div className="App">
@@ -39,24 +71,16 @@ class App extends Component {
             <Buttons newschannel={news.name} id={news.id} />
           ))}
         </div>
-        {/* <NewsCard
-          src={
-            "https://i-invdn-com.akamaized.net/trkd-images/LYNXNPEF41017_L.jpg"
-          }
-          headline={
-            "Junk food could be banned for Texas food stamp recipients - KTRK-TV"
-          }
-          details={
-            <p>
-              "By Swati Pandey\r\nSYDNEY (Reuters) - Asian markets marked time
-              on Thursday with two major centers - Japan and China - shut for
-              holidays while the dollar held on to overnight gains after the
-              U.S. central bank poured cold water on rate cut
-              expectations.\r\nAustral… [+3949 chars]"
-            </p>
-          }
-          name={<p>Author:Reuters</p>}
-        /> */}
+        <div className="desc">
+          {this.state.articles.map(body => (
+            <NewsCard
+              urlToImage={body.urlToImage}
+              title={body.title}
+              description={body.description}
+              author={body.author}
+            />
+          ))}
+        </div>
       </div>
     );
   }

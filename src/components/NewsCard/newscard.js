@@ -1,18 +1,19 @@
-import React, { Component } from "react";
+import React from "react";
 import "./newscard.css";
 
-class NewsCard extends Component {
-  render() {
-    return (
-      <div className="newscard">
-        <img src={this.props.src} />
-
-        <p className="details">{this.props.details}</p>
-        <p className="author">{this.props.name}</p>
-        <p className="headline">{this.props.headline}</p>
+const NewsCard = props => {
+  return (
+    <div className="container">
+      <div>
+        <img src={props.urlToImage} />
       </div>
-    );
-  }
-}
+      <div className="container1">
+        <div className="container2">{props.title}</div>
+        <div className="container3">{props.description}</div>
+        <div className="author">{props.author}</div>
+      </div>
+    </div>
+  );
+};
 
 export default NewsCard;

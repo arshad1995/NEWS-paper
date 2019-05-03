@@ -1,44 +1,40 @@
-.newscard {
-  border: 3px solid rgba(179, 173, 173, 0.493);
+.container {
   display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  margin: 123px;
-  justify-content: space-between;
-  position: relative;
-  bottom: 264.5px;
-  width: 944.8px;
-  height: 220px;
+  width: 720px;
+  margin: 10px;
+  background-color: #ececec;
+  /* border: 1px solid #130f40; */
 }
+
 img {
-  width: 151.1px;
-  height: 151.1px;
+  width: 120px;
+  height: 120px;
+  border-radius: 4px;
 }
-.headline {
-  text-align: justify;
-  position: relative;
-  bottom: 4.3cm;
-  right: 6.8cm;
+.container1 {
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  margin: 6px;
+}
+.container2 {
+  color: rgb(19, 104, 161);
   font-weight: bold;
-  color: rgb(8, 100, 153);
   font-style: italic;
-  background: white;
-  border-bottom: 2px solid #be2819;
-  padding: 7px 0 6px;
-  margin-bottom: 60px;
+  width: 100%;
 }
-.details {
-  text-align: justify;
-  position: relative;
-  top: 15px;
-  right: 0.5cm;
-  width: 755.9px;
+.container3 {
+  padding: 8px;
+  font-style: italic;
+  /* width: 100%; */
 }
+/* .container4 {
+  display: flex;
+  align-items: flex-end;
+  margin: 0 50px 4px 0;
+} */
 .author {
-  font-style: italic;
-  position: relative;
-  bottom: 10px;
-  left: 18cm;
-  color: rgb(46, 142, 231);
-  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
 }
