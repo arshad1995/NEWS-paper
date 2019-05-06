@@ -7,24 +7,34 @@ import "./App.css";
 
 let channels = [
   {
-    name: "The times of india",
+    name: "The Times of India",
+    channel_id: "the-times-of-india",
     id: 1
   },
   {
-    name: "Ndtv.com",
+    name: "The Hindu",
+    channel_id: "the-hindu",
     id: 2
   },
   {
-    name: "Indianexpress.com",
+    name: "CNBC",
+    channel_id: "cnbc",
     id: 3
   },
   {
-    name: "Scroll.in",
+    name: "Al Jazeera English",
+    channel_id: "al-jazeera-english",
     id: 4
   },
   {
-    name: "Cnbctv18.com",
+    name: "ESPN Cric Info",
+    channel_id: "espn-cric-info",
     id: 5
+  },
+  {
+    name: "CNN",
+    channel_id: "cnn",
+    id: 6
   }
 ];
 // let iteams = [
@@ -52,14 +62,18 @@ class App extends Component {
   };
 
   componentDidMount() {
+    this.fetchNews("the-times-of-india");
+  }
+
+  fetchNews = channel_id => {
     fetch(
-      "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=539240fb4d8d48bc9657e4c6fadfb939 "
+      `https://newsapi.org/v2/top-headlines?sources=${channel_id}&apiKey=539240fb4d8d48bc9657e4c6fadfb939`
     )
       .then(data => data.json())
 
       .then(data => this.setState({ articles: data.articles }))
       .catch(e => e);
-  }
+  };
 
   render() {
     return (
@@ -68,7 +82,12 @@ class App extends Component {
 
         <div className="centerButton">
           {channels.map(news => (
-            <Buttons newschannel={news.name} id={news.id} />
+            <Buttons
+              newschannel={news.name}
+              id={news.id}
+              channel_id={news.channel_id}
+              fetch={cid => this.fetchNews(cid)}
+            />
           ))}
         </div>
         <div className="desc">
@@ -87,3 +106,10 @@ class App extends Component {
 }
 
 export default App;
+
+//the-times-of-india
+//the-hindu
+//cnbc
+//al-jazeera-english
+// cnn
+// espn-cric-info
