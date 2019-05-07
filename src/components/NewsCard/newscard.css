@@ -1,7 +1,7 @@
 .container {
   display: flex;
   justify-content: center;
-  width: 720px;
+  max-width: 720px;
   margin: 10px;
   background-color: #ececec;
   /* border: 1px solid #130f40; */
