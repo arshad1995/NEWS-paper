@@ -70,7 +70,7 @@ class App extends Component {
       `https://newsapi.org/v2/top-headlines?sources=${channel_id}&apiKey=539240fb4d8d48bc9657e4c6fadfb939`
     )
       .then(data => data.json())
-
+      // .then(data=>console.log(data))
       .then(data => this.setState({ articles: data.articles }))
       .catch(e => e);
   };
@@ -97,6 +97,7 @@ class App extends Component {
               title={body.title}
               description={body.description}
               author={body.author}
+              url={body.url}
             />
           ))}
         </div>

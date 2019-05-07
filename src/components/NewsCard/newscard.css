@@ -8,8 +8,8 @@
 }
 
 img {
-  width: 120px;
-  height: 120px;
+  max-width: 120px;
+  max-height: 120px;
   border-radius: 4px;
 }
 .container1 {
@@ -18,15 +18,17 @@ img {
   /* align-items: flex-start; */
   margin: 6px;
 }
-.container2 {
+.container2 > a {
   color: rgb(19, 104, 161);
   font-weight: bold;
   font-style: italic;
   width: 100%;
+  text-decoration: none;
 }
 .container3 {
   padding: 8px;
   font-style: italic;
+
   /* width: 100%; */
 }
 /* .container4 {
