@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import Header from "../Header/header";
 import NewsCard from "../NewsCard/newscard";
 import Buttons from "../Buttons/buttons";
-import "../../App.module.css";
 import "./News.css";
 
 let channels = [
@@ -27,8 +26,8 @@ let channels = [
     id: 4
   },
   {
-    name: "ESPN Cric Info",
-    channel_id: "espn-cric-info",
+    name: "news24",
+    channel_id: "news24",
     id: 5
   },
   {

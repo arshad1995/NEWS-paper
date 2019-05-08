@@ -5,8 +5,6 @@ import LoginComp from "./components/Login/login";
 import Register from "./components/Login/Register";
 import News from "./components/NewsCard/News";
 
-import "./App.module.css";
-
 class App extends Component {
   render() {
     return (
