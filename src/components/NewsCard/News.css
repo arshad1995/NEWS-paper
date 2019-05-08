@@ -1,0 +1,15 @@
+.centerButton {
+  display: flex;
+  justify-content: center;
+  background-color: #ececec;
+}
+.desc {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.desc {
+  border-radius: 4px;
+}
