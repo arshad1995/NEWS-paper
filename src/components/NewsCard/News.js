@@ -3,6 +3,7 @@ import Header from "../Header/header";
 import NewsCard from "../NewsCard/newscard";
 import Buttons from "../Buttons/buttons";
 import "./News.css";
+import Load from "./Load";
 
 let channels = [
   {
@@ -38,7 +39,8 @@ let channels = [
 ];
 class News extends Component {
   state = {
-    articles: []
+    articles: [],
+    loading: false
   };
 
   componentDidMount() {
@@ -46,12 +48,14 @@ class News extends Component {
   }
 
   fetchNews = channel_id => {
+    this.setState({ loading: true });
+
     fetch(
       `https://newsapi.org/v2/top-headlines?sources=${channel_id}&apiKey=539240fb4d8d48bc9657e4c6fadfb939`
     )
       .then(data => data.json())
       // .then(data=>console.log(data))
-      .then(data => this.setState({ articles: data.articles }))
+      .then(data => this.setState({ articles: data.articles, loading: false }))
       .catch(e => e);
   };
   render() {
@@ -70,17 +74,21 @@ class News extends Component {
               />
             ))}
           </div>
-          <div className="desc">
-            {this.state.articles.map(body => (
-              <NewsCard
-                urlToImage={body.urlToImage}
-                title={body.title}
-                description={body.description}
-                author={body.author}
-                url={body.url}
-              />
-            ))}
-          </div>
+          {this.state.loading ? (
+            <Load />
+          ) : (
+            <div className="desc">
+              {this.state.articles.map(body => (
+                <NewsCard
+                  urlToImage={body.urlToImage}
+                  title={body.title}
+                  description={body.description}
+                  author={body.author}
+                  url={body.url}
+                />
+              ))}
+            </div>
+          )}
         </div>
       </div>
     );

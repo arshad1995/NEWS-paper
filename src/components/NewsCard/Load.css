@@ -1,0 +1,7 @@
+.load {
+  font-style: oblique;
+  font-size: 9mm;
+  display: flex;
+  justify-content: center;
+  margin: 250px;
+}
