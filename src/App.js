@@ -11,7 +11,9 @@ class App extends Component {
       <div>
         <div>
           <BrowserRouter>
-            <Route path="/" component={LoginComp} exact={true} />
+            {/* <Route path="/" component={LoginComp} exact={true} /> */}
+            <Route path="/" component={News} exact={true} />
+
             <Route path="/register" component={Register} />
             <Route path="/news" component={News} />
           </BrowserRouter>
